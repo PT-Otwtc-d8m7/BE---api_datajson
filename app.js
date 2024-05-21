@@ -14,6 +14,13 @@ const writeUsers = (users) => {
   fs.writeFileSync('users.json', JSON.stringify(users, null, 2), 'utf-8');
 };
 
+
+// GET all users
+app.get('/new', (req, res) => {
+    res.send('Hello MGH');
+    console.log('Hello MGH');
+  });
+
 // GET all users
 app.get('/users', (req, res) => {
   const users = readUsers();
@@ -72,3 +79,5 @@ app.delete('/users/:id', (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
+
+// Dong nay de test pull request
